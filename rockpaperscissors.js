@@ -20,7 +20,7 @@ function getHumanChoice() {
 */
 let humanScore = 0;
 let computerScore = 0;
-const maxPoints = 5;
+let maxPoints = 5;
 
 function updateScoreBoard() {
   document.querySelector("#human-score").textContent = humanScore;
@@ -67,6 +67,19 @@ function declareWinner() {
     matchResult.textContent = `Game Over! It's a tie! (${humanScore}-${computerScore})`;
   }
 }
+
+const roundAdjust = document.querySelector(".round-adjust input");
+const playButton = document.querySelector(".round-adjust button");
+
+playButton.addEventListener("click", () => {
+  maxPoints = parseInt(roundAdjust.value);
+  humanScore = 0;
+  computerScore = 0;
+  updateScoreBoard();
+
+  document.querySelector(".round-result").textContent = "";
+  document.querySelector(".match-result").textContent = "";
+});
 
 const container = document.querySelector(".rps-box");
 

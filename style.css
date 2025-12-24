@@ -37,3 +37,19 @@ body h1 {
     display: flex;
     gap: 15px;
 }
+
+.round-adjust {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.round-adjust input,
+.round-adjust button {
+    padding: 5px;
+    border-radius: 4px;
+}
+
+.round-adjust button {
+    cursor: pointer;
+}
